@@ -1,0 +1,452 @@
+<!doctype html>
+<html class="h-100" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <meta name="description" content="A growing collection of ready to use components for the CSS framework Bootstrap 5">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="96x96" href=".t/img/favicon.png">
+  <meta name="author" content="Holger Koenemann">
+  <meta name="generator" content="Eleventy v2.0.0">
+  <meta name="HandheldFriendly" content="true">
+  <title>EXAMEN PRACTICO</title>
+  <link rel="stylesheet" href="css/theme.min.css">
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+
+  <style>
+    /* inter-300 - latin */
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: local(''),
+        url('./fonts/inter-v12-latin-300.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('./fonts/inter-v12-latin-300.woff') format('woff');
+      /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: local(''),
+        url('./fonts/inter-v12-latin-500.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('./fonts/inter-v12-latin-500.woff') format('woff');
+      /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: local(''),
+        url('./fonts/inter-v12-latin-700.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('./fonts/inter-v12-latin-700.woff') format('woff');
+      /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+    .celeste {
+      background-color: lightblue;
+      font-weight: bold;
+    }
+
+    .table-bordered {
+      border: 2px solid blue !important;
+    }
+
+    .cuerpo {
+      background-color: #ffd994;
+    }
+
+    .code-viewer {
+      background-color: #282a3a;
+      color: #d4d4d4;
+      border-radius: 5px;
+      padding: 10px;
+      font-family: 'Courier New', monospace;
+    }
+
+    .code-viewer .keyword {
+      color: #569cd6;
+    }
+
+    .code-viewer .variable {
+      color: #9cdcfe;
+    }
+
+    .code-viewer .constant {
+      color: #d7ba7d;
+    }
+
+    .code-viewer .string {
+      color: #ce9178;
+    }
+
+    .code-viewer .function {
+      color: #c586c0;
+    }
+
+    .code-viewer code {
+      color: #ffffff;
+    }
+
+    .code-viewer .tag {
+      color: #ff9d00;
+      /* Color para los tags */
+    }
+
+    .code-viewer .comment {
+      color: #5c6370;
+      /* Color para los comentarios */
+    }
+
+    .code-viewer .property {
+      color: #82aaff;
+      /* Color para las propiedades */
+    }
+
+    .code-viewer .builtin {
+      color: #c792ea;
+      /* Color para los elementos incorporados */
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: auto;
+    }
+
+    .concacaf-footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .social-icons img {
+            width: 30px;
+            margin-right: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.2);
+        }
+
+        .footer-nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .footer-nav li {
+            margin-right: 20px;
+            text-align: center;
+        }
+
+        .footer-nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+            text-align: center;
+        }
+
+        .footer-nav a:hover {
+            color: #ffd700;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+
+        li {
+            margin-right: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000; /* Cambia el color del texto según tus preferencias */
+            font-weight: bold;
+        }
+        .separar{
+          text-align: center;
+        }
+    /* Añade aquí estilos para otros elementos del código, como comentarios, cadenas, etc. */
+  </style>
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navScroll">
+
+  <nav id="navScroll" class="navbar navbar-expand-lg navbar-light fixed-top" tabindex="0">
+    <div class="container">
+      <a class="navbar-brand pe-4 fs-4" href="/">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-layers-half"
+          viewbox="0 0 16 16">
+          <path
+            d="M8.235 1.559a.5.5 0 0 0-.47 0l-7.5 4a.5.5 0 0 0 0 .882L3.188 8 .264 9.559a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882L12.813 8l2.922-1.559a.5.5 0 0 0 0-.882l-7.5-4zM8 9.433 1.562 6 8 2.567 14.438 6 8 9.433z" />
+        </svg>
+        <span class="ms-1 fw-bolder">Grupo 5</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#services" aria-label="Brings you to the frontpage">
+              CONCACAF
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/img2.png" class="d-block w-100" alt="Image 1">
+          <div class="carousel-caption">
+            <h3 align="text-center">TRABAJO GRUPAL EXAMEN</h3>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/img1.jpg" class="d-block w-100" alt="Image 2">
+          <div class="carousel-caption">
+            <h3 align="text-center">GRUPO 5</h3>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/img.png" class="d-block w-100" alt="Image 3">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </a>
+    </div>
+    <div class="w-100 overflow-hidden bg-gray-100" id="top">
+
+      <div class="container position-relative">
+        <div class="col-12 col-lg-8 mt-0 h-100 position-absolute top-0 end-0 bg-cover" data-aos="fade-left"
+          style="background-image: url(img/img.avif);">
+
+        </div>
+        <div class="row">
+
+          <div class="col-lg-7 py-vh-6 position-relative" data-aos="fade-right">
+            <h1 class="display-1 fw-bold mt-5">JUGADORES DESTACADOS</h1>
+            <p class="lead"><br>
+              MIAMI, Florida - Andre Blake de Jamaica, Adalberto Carrasquilla de Panamá y Luis Chávez de México son
+              entre otros, los jugadores que, en base a estadísticas, fueron electos en el Mejor XI de la Liga A de las
+              Naciones de Concacaf 2023-24.
+
+              A continuación, el Mejor XI de los partidos de los cuartos de final de la Liga de Naciones Concacaf. .<br>
+            </p>
+            <img src="img/img3.png" alt="Concacaf">
+          </div>
+
+
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="py-vh-5 w-100 overflow-hidden" id="services">
+      <div class="container">
+        <div class="row d-flex justify-content-end">
+          <div class="col-lg-8" data-aos="fade-down"></div>
+        </div>
+        <div class="container">
+          <h2 class="text-center">JUGADORES VALIOSOS DE LA CONCACAF</h2>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th class="celeste text-center">Guardameta</th>
+                <th class="celeste text-center">Defensores</th>
+                <th class="celeste text-center">Mediocampistas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="celeste">Andre Blake, Jamaica
+                  Blake estuvo excelente en ambos partidos contra Canadá, realizando cuatro despejes y ocho salvadas,
+                  incluyendo dos con una reacción felina desde corta distancia al inicio del primer tiempo en el partido
+                  de vuelta en Toronto.</td>
+                <td class="cuerpo">Alvin Jones, Trinidad y Tobago
+
+                  Jones tiene la costumbre de ser un dolor de cabeza para Estados Unidos, y lo volvió a hacer en la
+                  victoria por 2-1 en el segundo partido para los Soca Warriors con un sensacional gol de falta y una
+                  asistencia. También tuvo cuatro recuperaciones y 10 despejes en los dos juegos.
+                </td>
+                <td class="cuerpo">Edson Álvarez, México
+
+                  Álvarez anotó un gol que los aficionados de México nunca olvidarán, con el tiempo llegando a su final
+                  en los últimos segundos del partido de vuelta para igualar el marcador 2-2 en el marcador global y
+                  forzar el tiempo extra ante Honduras en el estadio Azteca. También realizó dos despejes y tuvo una
+                  recuperación.</td>
+              </tr>
+              <tr>
+                <td class="celeste"></td>
+                <td class="cuerpo">Antonee Robinson, Estados Unidos
+
+                  Robinson desempeñó un papel importante en el éxito de Estados Unidos con un gol y una asistencia en la
+                  victoria por 3-0 en el primer partido y luego en la única anotación de Estados Unidos en el partido de
+                  vuelta en Trinidad y Tobago. También tuvo cuatro recuperaciones.</td>
+                <td class="cuerpo">Adalberto Carrasquilla, Panamá
+
+                  Carrasquilla fue magistral una vez más para Panamá en el centro del campo con un par de asistencias,
+                  completando casi el 90 por ciento de sus pases.</td>
+              </tr>
+              <tr>
+                <td class="celeste"></td>
+                <td class="cuerpo">Michael Murillo, Panamá
+
+                  Murillo fue el encargado de abrir el marcador para Panamá, anotando su gol en el primer partido.
+                  Terminó la serie de ida y vuelta con dos recuperaciones y un despeje.</td>
+                <td class="cuerpo">Luis Chávez, México
+
+                  Chávez se ha convertido en el especialista en tiros libres de México y anotó nuevamente desde un balón
+                  parado en lo que fue el primer gol mexicano en su serie contra Honduras. Completó un asombroso 91 por
+                  ciento de sus pases.
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/aos.js"></script>
+      <script>
+        AOS.init({
+          duration: 800, // values from 0 to 3000, with step 50ms
+        });
+      </script>
+
+      <script>
+        let scrollpos = window.scrollY
+        const header = document.querySelector(".navbar")
+        const header_height = header.offsetHeight
+
+        const add_class_on_scroll = () => header.classList.add("scrolled", "shadow-sm")
+        const remove_class_on_scroll = () => header.classList.remove("scrolled", "shadow-sm")
+
+        window.addEventListener('scroll', function () {
+          scrollpos = window.scrollY;
+
+          if (scrollpos >= header_height) {
+            add_class_on_scroll()
+          } else {
+            remove_class_on_scroll()
+          }
+
+          console.log(scrollpos)
+        })
+      </script>
+
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+      <script>
+        // Configurar el carrusel para que se mueva automáticamente
+        var myCarousel = document.getElementById('carouselExampleIndicators');
+        var carousel = new bootstrap.Carousel(myCarousel, {
+          interval: 3000, // Cambia cada 3 segundos (3000 milisegundos)
+          wrap: true // Reproduce automáticamente desde el principio después de llegar al último slide
+        });
+      </script>
+      <br>
+
+      <img src="img/img5.png" alt="imagenpie" width="200" height="300">
+      <br><br><br><br><br>
+
+      <footer class="concacaf-footer">
+        <div id="footer" class="Texto">
+          <div class="centrar">
+              <button class="btn btn-primary">
+                <svg class="icon icon-facebook-with-circle"><use xlink:href="#icon-facebook-with-circle"></use>
+                   <symbol id="icon-facebook-with-circle" viewBox="0 0 20 20">
+                      <path d="M10 0.4c-5.302 0-9.6 4.298-9.6 9.6s4.298 9.6 9.6 9.6 9.6-4.298 9.6-9.6-4.298-9.6-9.6-9.6zM12.274 7.034h-1.443c-0.171 0-0.361 0.225-0.361 0.524v1.042h1.805l-0.273 1.486h-1.532v4.461h-1.703v-4.461h-1.545v-1.486h1.545v-0.874c0-1.254 0.87-2.273 2.064-2.273h1.443v1.581z"></path>
+                   </symbol>
+                  <i class="fab fa-facebook"></i> Facebook
+                </svg>
+              </button>
+              <button class="btn btn-danger">
+                <svg class="icon icon-instagram"><use xlink:href="#icon-instagram"></use>
+                   <symbol id="icon-instagram" viewBox="0 0 32 32">
+                      <path d="M16 2.881c4.275 0 4.781 0.019 6.462 0.094 1.563 0.069 2.406 0.331 2.969 0.55 0.744 0.288 1.281 0.638 1.837 1.194 0.563 0.563 0.906 1.094 1.2 1.838 0.219 0.563 0.481 1.412 0.55 2.969 0.075 1.688 0.094 2.194 0.094 6.463s-0.019 4.781-0.094 6.463c-0.069 1.563-0.331 2.406-0.55 2.969-0.288 0.744-0.637 1.281-1.194 1.837-0.563 0.563-1.094 0.906-1.837 1.2-0.563 0.219-1.413 0.481-2.969 0.55-1.688 0.075-2.194 0.094-6.463 0.094s-4.781-0.019-6.463-0.094c-1.563-0.069-2.406-0.331-2.969-0.55-0.744-0.288-1.281-0.637-1.838-1.194-0.563-0.563-0.906-1.094-1.2-1.837-0.219-0.563-0.481-1.413-0.55-2.969-0.075-1.688-0.094-2.194-0.094-6.463s0.019-4.781 0.094-6.463c0.069-1.563 0.331-2.406 0.55-2.969 0.288-0.744 0.638-1.281 1.194-1.838 0.563-0.563 1.094-0.906 1.838-1.2 0.563-0.219 1.412-0.481 2.969-0.55 1.681-0.075 2.188-0.094 6.463-0.094zM16 0c-4.344 0-4.887 0.019-6.594 0.094-1.7 0.075-2.869 0.35-3.881 0.744-1.056 0.412-1.95 0.956-2.837 1.85-0.894 0.888-1.438 1.781-1.85 2.831-0.394 1.019-0.669 2.181-0.744 3.881-0.075 1.713-0.094 2.256-0.094 6.6s0.019 4.887 0.094 6.594c0.075 1.7 0.35 2.869 0.744 3.881 0.413 1.056 0.956 1.95 1.85 2.837 0.887 0.887 1.781 1.438 2.831 1.844 1.019 0.394 2.181 0.669 3.881 0.744 1.706 0.075 2.25 0.094 6.594 0.094s4.888-0.019 6.594-0.094c1.7-0.075 2.869-0.35 3.881-0.744 1.050-0.406 1.944-0.956 2.831-1.844s1.438-1.781 1.844-2.831c0.394-1.019 0.669-2.181 0.744-3.881 0.075-1.706 0.094-2.25 0.094-6.594s-0.019-4.887-0.094-6.594c-0.075-1.7-0.35-2.869-0.744-3.881-0.394-1.063-0.938-1.956-1.831-2.844-0.887-0.887-1.781-1.438-2.831-1.844-1.019-0.394-2.181-0.669-3.881-0.744-1.712-0.081-2.256-0.1-6.6-0.1v0z"></path>
+                      <path d="M16 7.781c-4.537 0-8.219 3.681-8.219 8.219s3.681 8.219 8.219 8.219 8.219-3.681 8.219-8.219c0-4.537-3.681-8.219-8.219-8.219zM16 21.331c-2.944 0-5.331-2.387-5.331-5.331s2.387-5.331 5.331-5.331c2.944 0 5.331 2.387 5.331 5.331s-2.387 5.331-5.331 5.331z"></path>
+                      <path d="M26.462 7.456c0 1.060-0.859 1.919-1.919 1.919s-1.919-0.859-1.919-1.919c0-1.060 0.859-1.919 1.919-1.919s1.919 0.859 1.919 1.919z"></path>
+                   </symbol>
+                  <i class="fab fa-instagram"></i> Instagram
+                </svg>
+              </button>
+              <button class="btn btn-success">
+                <svg class="icon icon-whatsapp"><use xlink:href="#icon-whatsapp"></use>
+                   <symbol id="icon-whatsapp" viewBox="0 0 32 32">
+                      <path d="M27.281 4.65c-2.994-3-6.975-4.65-11.219-4.65-8.738 0-15.85 7.112-15.85 15.856 0 2.794 0.731 5.525 2.119 7.925l-2.25 8.219 8.406-2.206c2.319 1.262 4.925 1.931 7.575 1.931h0.006c0 0 0 0 0 0 8.738 0 15.856-7.113 15.856-15.856 0-4.238-1.65-8.219-4.644-11.219zM16.069 29.050v0c-2.369 0-4.688-0.637-6.713-1.837l-0.481-0.288-4.987 1.306 1.331-4.863-0.313-0.5c-1.325-2.094-2.019-4.519-2.019-7.012 0-7.269 5.912-13.181 13.188-13.181 3.519 0 6.831 1.375 9.319 3.862 2.488 2.494 3.856 5.8 3.856 9.325-0.006 7.275-5.919 13.188-13.181 13.188zM23.294 19.175c-0.394-0.2-2.344-1.156-2.706-1.288s-0.625-0.2-0.894 0.2c-0.262 0.394-1.025 1.288-1.256 1.556-0.231 0.262-0.462 0.3-0.856 0.1s-1.675-0.619-3.188-1.969c-1.175-1.050-1.975-2.35-2.206-2.744s-0.025-0.613 0.175-0.806c0.181-0.175 0.394-0.463 0.594-0.694s0.262-0.394 0.394-0.662c0.131-0.262 0.069-0.494-0.031-0.694s-0.894-2.15-1.219-2.944c-0.319-0.775-0.65-0.669-0.894-0.681-0.231-0.012-0.494-0.012-0.756-0.012s-0.694 0.1-1.056 0.494c-0.363 0.394-1.387 1.356-1.387 3.306s1.419 3.831 1.619 4.1c0.2 0.262 2.794 4.269 6.769 5.981 0.944 0.406 1.681 0.65 2.256 0.837 0.95 0.3 1.813 0.256 2.494 0.156 0.762-0.113 2.344-0.956 2.675-1.881s0.331-1.719 0.231-1.881c-0.094-0.175-0.356-0.275-0.756-0.475z"></path>
+                   </symbol>
+                  <i class="fab fa-whatsapp"></i> Whatsapp
+                </svg>
+              </button>
+          </div>
+      </div>
+          <div class="footer-nav">
+                     
+                    <ul class="separar">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Noticias</a></li>
+                        <li><a href="#">Eventos</a></li>
+                        <li><a href="#">Equipos</a></li>
+                        <li><a href="#">Contáctenos</a></li>
+                    </ul> 
+                </div>
+            </div>
+        </div>
+      
+    </footer>
+
+</body>
+
+</html>
